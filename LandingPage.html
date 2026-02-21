@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADLCNDH – Association Départementale de Lutte Contre les Nuisibles dans le Domaine de l'Habitat | Vaucluse</title>
+  <meta name="description" content="L'ADLCNDH intervient dans le département du Vaucluse pour diagnostiquer, prévenir et lutter contre les nuisibles dans l'habitat. Diagnostic gratuit pour tous les habitants." />
+  <meta name="keywords" content="nuisibles, rongeurs, habitat, Vaucluse, association, diagnostic gratuit, prévention, ADLCNDH, 84" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="ADLCNDH – Lutte contre les nuisibles dans l'habitat – Vaucluse" />
+  <meta property="og:description" content="Diagnostic gratuit, prévention et sensibilisation contre les nuisibles dans le département du Vaucluse." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── VARIABLES ─────────────────────────────────────────── */
+    :root {
+      --vert:        #1f4d2e;
+      --vert-fonce:  #122c1a;
+      --vert-clair:  #2d6b3f;
+      --vert-pale:   #eaf2ec;
+      --rouge:       #b71c1c;
+      --rouge-hover: #961717;
+      --or:          #a07c0a;
+      --or-clair:    #c9a227;
+      --blanc:       #ffffff;
+      --texte:       #1a1a1a;
+      --gris:        #4f4f4f;
+      --gris-med:    #797979;
+      --gris-clair:  #f5f5f3;
+      --bordure:     #d0dace;
+      --nav-h:       64px;
+      --demo-h:      28px;
+      --offset:      calc(var(--demo-h) + var(--nav-h));
+    }
+
+    /* ─── RESET ─────────────────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--texte);
+      background: var(--blanc);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── BANDE DÉMO ─────────────────────────────────────────── */
+    .demo-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1100;
+      background: var(--rouge);
+      color: var(--blanc);
+      text-align: center;
+      padding: 5px 16px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      height: var(--demo-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .demo-banner-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* ─── NAVIGATION ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: var(--demo-h);
+      left: 0; right: 0;
+      z-index: 1000;
+      background: var(--vert-fonce);
+      border-bottom: 2px solid var(--or);
+      height: var(--nav-h);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    /* Logo — remplaçable par /public/logo.png */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-img-wrap {
+      /* Swap this <img src="/public/logo.png"> when the real logo is ready */
+      width: 44px; height: 50px;
+      flex-shrink: 0;
+    }
+
+    .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+    .logo-acronyme {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--blanc);
+    }
+    .logo-dept {
+      font-size: 9.5px;
+      letter-spacing: 1.8px;
+      color: #91b898;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: #b5cdb9;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      padding: 8px 13px;
+      border-radius: 3px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,0.08); color: var(--blanc); }
+    .nav-links .nav-cta {
+      background: var(--rouge);
+      color: var(--blanc) !important;
+      padding: 8px 18px;
+      margin-left: 6px;
+    }
+    .nav-links .nav-cta:hover { background: var(--rouge-hover); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      border: none;
+      background: transparent;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--blanc);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+     .hero {
+  margin-top: var(--offset);
+  background: var(--vert-fonce);
+  padding: 110px 28px;
+  text-align: center;
+  color: var(--blanc);
+}
+
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero h1 strong {
+  color: #74c27a;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #a8c4ad;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--rouge);
+      color: var(--blanc);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      padding: 13px 26px;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.15s;
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: var(--rouge-hover); transform: translateY(-1px); }
+    .btn-primary svg { flex-shrink: 0; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: transparent;
+      color: var(--blanc);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 24px;
+      border-radius: 3px;
+      border: 1.5px solid rgba(255,255,255,0.28);
+      transition: border-color 0.18s, background 0.18s;
+      text-decoration: none;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.05); }
+
+    /* Panneau info côté droit du hero */
+    .hero-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hero-info-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 4px solid var(--or-clair);
+      padding: 18px 22px;
+      border-radius: 3px;
+    }
+    .hero-info-card.accent { border-left-color: var(--rouge); }
+    .hic-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #7a9e80;
+      margin-bottom: 5px;
+    }
+    .hic-value {
+      font-family: 'Source Serif 4', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--blanc);
+      letter-spacing: 0.5px;
+    }
+    .hic-sub {
+      font-size: 12px;
+      color: #6a8e70;
+      margin-top: 3px;
+    }
+    .hero-info-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* ─── BARRE STATISTIQUES ─────────────────────────────────── */
+    .stats-bar {
+      background: var(--vert);
+      border-bottom: 2px solid rgba(0,0,0,0.15);
+    }
+    .stats-bar .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 18px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-icon { color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+    .stat-num {
+      font-family: 'Source Serif 4', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--blanc);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: #a8c4ad;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+    }
+
+    /* ─── SECTION COMMUNE ────────────────────────────────────── */
+    section { padding: 80px 28px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--vert);
+      margin-bottom: 12px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 2px;
+      background: var(--vert);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(24px, 2.8vw, 38px);
+      font-weight: 700;
+      color: var(--vert-fonce);
+      line-height: 1.22;
+      margin-bottom: 14px;
+    }
+    .section-intro {
+      font-size: 15.5px;
+      color: var(--gris);
+      max-width: 600px;
+      line-height: 1.75;
+    }
+    .section-header { margin-bottom: 52px; }
+
+    /* ─── MISSION ────────────────────────────────────────────── */
+    #mission { background: var(--blanc); }
+
+    .mission-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* Bloc piliers de mission */
+    .mission-pillars {
+      display: flex;
+      flex-direction: column;
+    }
+    .mission-pillar {
+      display: flex;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--bordure);
+      transition: background 0.2s;
+    }
+    .mission-pillar:first-child { border-top: 1px solid var(--bordure); }
+    .mission-pillar:hover { background: var(--gris-clair); margin: 0 -12px; padding-left: 12px; padding-right: 12px; border-radius: 4px; }
+
+    .pillar-icon {
+      width: 42px; height: 42px;
+      background: var(--vert-pale);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--vert);
+      transition: background 0.2s;
+    }
+    .mission-pillar:hover .pillar-icon { background: var(--vert); color: var(--blanc); }
+
+    .pillar-body h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--vert-fonce);
+      margin-bottom: 5px;
+      margin-top: 8px;
+    }
+    .pillar-body p {
+      font-size: 13.5px;
+      color: var(--gris);
+      line-height: 1.65;
+    }
+
+    /* Encadré institutionnel */
+    .mission-card {
+      background: var(--vert-pale);
+      border: 1px solid var(--bordure);
+      border-radius: 6px;
+      padding: 36px;
+      position: relative;
+    }
+    .mission-card::before {
+      content: 'ASSOCIATION LOI 1901';
+      position: absolute;
+      top: 14px; right: 16px;
+      font-size: 8.5px;
+      letter-spacing: 2px;
+      color: var(--gris-med);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .rna-row {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-left: 4px solid var(--vert);
+      padding: 16px 18px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .rna-row:last-of-type { margin-bottom: 0; }
+    .rna-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gris-med);
+      margin-bottom: 5px;
+    }
+    .rna-val {
+      font-family: 'Source Serif 4', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--vert-fonce);
+      letter-spacing: 0.5px;
+    }
+    .rna-row.rouge { border-left-color: var(--rouge); }
+
+    .independance-note {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: rgba(31,77,46,0.07);
+      border: 1px solid var(--bordure);
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--gris);
+      line-height: 1.65;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .independance-note svg { flex-shrink: 0; margin-top: 2px; color: var(--vert); }
+    .independance-note strong { color: var(--vert-fonce); }
+
+    .mission-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .tag {
+      background: var(--vert);
+      color: var(--blanc);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 13px;
+      border-radius: 20px;
+      letter-spacing: 0.4px;
+    }
+
+    /* ─── RÉSUMÉ MISSION (bandeau entre Hero et Mission) ─────── */
+    .mission-resume {
+      background: var(--gris-clair);
+      padding: 52px 28px;
+      border-top: 1px solid var(--bordure);
+      border-bottom: 1px solid var(--bordure);
+    }
+    .mission-resume .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .resume-text h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(20px, 2.2vw, 30px);
+      font-weight: 700;
+      color: var(--vert-fonce);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .resume-text p {
+      font-size: 15px;
+      color: var(--gris);
+      line-height: 1.75;
+    }
+    .resume-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 28px 32px;
+      background: var(--vert-fonce);
+      border-radius: 5px;
+      border-left: 5px solid var(--or-clair);
+    }
+    .resume-cta p {
+      font-size: 14.5px;
+      color: #9dbfa3;
+      line-height: 1.65;
+    }
+    .resume-cta strong { color: var(--blanc); }
+
+    /* ─── SERVICES (CONSERVÉ, icônes mises à jour) ───────────── */
+    #services { background: var(--gris-clair); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-top: 4px solid var(--vert);
+      padding: 30px 22px;
+      border-radius: 4px;
+      transition: transform 0.22s, box-shadow 0.22s, border-top-color 0.22s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(31,77,46,0.11);
+      border-top-color: var(--rouge);
+    }
+    .card-icon-wrap {
+      width: 48px; height: 48px;
+      background: var(--vert-pale);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--vert);
+      margin-bottom: 18px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .service-card:hover .card-icon-wrap { background: var(--vert); color: var(--blanc); }
+
+    .service-card h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--vert-fonce);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .service-card p {
+      font-size: 13.5px;
+      color: var(--gris);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--vert);
+      padding: 4px 10px;
+      border: 1px solid var(--vert);
+      border-radius: 2px;
+    }
+
+    /* ─── DIAGNOSTIC (CONSERVÉ) ──────────────────────────────── */
+    #diagnostic { background: var(--blanc); }
+
+    .diagnostic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .steps { display: flex; flex-direction: column; }
+    .step {
+      display: flex;
+      gap: 18px;
+      padding-bottom: 28px;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 17px; top: 36px; bottom: 0;
+      width: 2px;
+      background: var(--bordure);
+    }
+    .step-num {
+      width: 36px; height: 36px;
+      background: var(--vert-fonce);
+      color: var(--blanc);
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .step-content { padding-top: 6px; }
+    .step-content h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--vert-fonce);
+      margin-bottom: 5px;
+    }
+    .step-content p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+
+    .form-wrap {
+      background: var(--vert-fonce);
+      border-radius: 6px;
+      padding: 36px;
+    }
+    .form-wrap h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--blanc);
+      margin-bottom: 6px;
+    }
+    .form-subtitle { font-size: 13px; color: #7a9e80; margin-bottom: 26px; }
+
+    .form-group { margin-bottom: 15px; }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: #91b898;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: var(--blanc);
+      padding: 11px 14px;
+      border-radius: 3px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.18s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.28); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: #74c27a; }
+    .form-group select { appearance: none; cursor: pointer; }
+    .form-group select option { background: #1a3a20; }
+    .form-group textarea { resize: vertical; min-height: 82px; }
+
+    .form-demo-note {
+      font-size: 11px;
+      color: #c9a227;
+      margin-top: 11px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    /* ─── CTA SECTION (CONSERVÉ, sans emojis) ────────────────── */
+    .cta-section {
+      background: linear-gradient(130deg, var(--vert-fonce) 0%, var(--vert-clair) 100%);
+      padding: 76px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(255,255,255,0.02) 30px,
+        rgba(255,255,255,0.02) 31px
+      );
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(22px, 2.8vw, 38px);
+      font-weight: 700;
+      color: var(--blanc);
+      margin-bottom: 14px;
+    }
+    .cta-section > .container > p {
+      font-size: 16px;
+      color: #9dbfa3;
+      margin-bottom: 34px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-contacts {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 38px;
+    }
+    .cta-contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 16px 24px;
+      border-radius: 4px;
+      color: var(--blanc);
+      text-decoration: none;
+      transition: background 0.18s;
+      min-width: 200px;
+    }
+    .cta-contact-card:hover { background: rgba(255,255,255,0.13); }
+    .cta-contact-card svg { color: #74c27a; flex-shrink: 0; }
+    .cta-card-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 1.2px; color: #7a9e80; margin-bottom: 3px; }
+    .cta-card-value { font-size: 15.5px; font-weight: 600; }
+
+    /* ─── CONTACT (CONSERVÉ, sans emojis) ────────────────────── */
+    #contact { background: var(--blanc); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--bordure);
+    }
+    .contact-item:first-of-type { border-top: 1px solid var(--bordure); }
+    .contact-icon-wrap {
+      width: 42px; height: 42px;
+      background: var(--vert-pale);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--vert);
+      flex-shrink: 0;
+    }
+    .ci-meta .ci-lbl { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--gris-med); margin-bottom: 4px; }
+    .ci-meta .ci-val { font-size: 15px; color: var(--texte); font-weight: 500; }
+    .ci-meta .ci-val a { color: var(--vert); }
+    .ci-meta .ci-val a:hover { text-decoration: underline; }
+
+    /* Mentions légales bloc */
+    .mentions-box {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-radius: 4px;
+      padding: 36px;
+    }
+    .mentions-box h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--vert);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+      margin-top: 22px;
+    }
+    .mentions-box h4:first-child { margin-top: 0; }
+    .mentions-box p { font-size: 13.5px; color: var(--gris); line-height: 1.7; margin-bottom: 4px; }
+    .mentions-box p strong { color: var(--texte); }
+    .mentions-box hr { border: none; border-top: 1px solid var(--bordure); margin: 16px 0; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--vert-fonce);
+      color: var(--blanc);
+      padding: 52px 28px 24px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 56px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 22px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      color: #7a9e80;
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 300px;
+    }
+    .footer-col h5 {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #6a8e70;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      color: #6a8e70;
+      font-size: 13.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.18s;
+    }
+    .footer-col ul li a:hover { color: var(--blanc); }
+    .footer-col ul li a svg { flex-shrink: 0; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: #446849;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-bottom .demo-tag {
+      color: var(--rouge);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 10.5px;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-panel { display: none; }
+      .mission-layout { grid-template-columns: 1fr; gap: 40px; }
+      .mission-resume .container { grid-template-columns: 1fr; gap: 32px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .diagnostic-grid { grid-template-columns: 1fr; gap: 44px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 44px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .cta-contacts { flex-direction: column; align-items: center; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; }
+      .nav-links.open {
+        display: flex;
+        position: fixed;
+        top: var(--offset);
+        left: 0; right: 0;
+        background: var(--vert-fonce);
+        padding: 16px 24px;
+        border-bottom: 2px solid var(--or);
+        gap: 4px;
+        z-index: 990;
+      }
+      .nav-links.open .nav-cta { margin-left: 0; }
+      .hamburger { display: flex; }
+      .stats-bar .container { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.12); }
+      section { padding: 60px 18px; }
+      .mission-resume { padding: 44px 18px; }
+    }
+
+    @media (max-width: 520px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-inner { padding: 60px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       BANDE DÉMO
+  ══════════════════════════════════════════════════ -->
+  <div class="demo-banner" role="alert" aria-label="Version démo">
+    <div class="demo-banner-dot"></div>
+    VERSION DÉMO &mdash; PROTOTYPE NON CONTRACTUEL
+    <div class="demo-banner-dot"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════════ -->
+  <nav role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+
+      <!-- Logo : remplacer le SVG par <img src="/public/logo.png" alt="Logo ADLCNDH" width="44" height="50"> -->
+      <a class="nav-logo" href="#accueil" aria-label="ADLCNDH – Accueil">
+        <div class="logo-img-wrap" aria-hidden="true">
+          <svg viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo ADLCNDH">
+            <!-- Écusson institutionnel -->
+            <path d="M3 3 L41 3 L41 32 L22 47 L3 32 Z" fill="#2d6b3f" stroke="#a07c0a" stroke-width="1.8"/>
+            <!-- Maison -->
+            <path d="M12 23 L22 13 L32 23" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="15" y="22" width="14" height="12" fill="none" stroke="#fff" stroke-width="1.3"/>
+            <rect x="19" y="27" width="6" height="7" fill="none" stroke="#fff" stroke-width="1"/>
+            <!-- Croix barrée (nuisible) -->
+            <circle cx="33" cy="15" r="5" fill="#b71c1c" opacity="0.9"/>
+            <line x1="30.5" y1="12.5" x2="35.5" y2="17.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="35.5" y1="12.5" x2="30.5" y2="17.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- 84 -->
+            <text x="22" y="42" text-anchor="middle" font-size="7" font-family="serif" fill="#a07c0a" font-weight="bold">84</text>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-acronyme">ADLCNDH</span>
+          <span class="logo-dept">Vaucluse &mdash; Département 84</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#mission">Notre mission</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#diagnostic">Diagnostic</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#diagnostic" class="nav-cta">Prendre rendez-vous</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════
+       HERO — Campagne départementale
+  ══════════════════════════════════════════════════ -->
+  <section class="hero" id="accueil">
+  <div class="hero-inner">
+
+    <h1>
+      Lutte contre les <strong>nuisibles dans l’habitat</strong><br>
+      Département du Vaucluse
+    </h1>
+
+    <p>
+      L’ADLCNDH accompagne gratuitement les habitants du Vaucluse
+      pour diagnostiquer, prévenir et traiter les infestations
+      dans les habitations.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#diagnostic" class="btn-primary">
+        Demander un diagnostic gratuit
+      </a>
+
+      <a href="#mission" class="btn-outline">
+        En savoir plus
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ══════════════════════════════════════════════════
+       BARRE STATISTIQUES
+  ══════════════════════════════════════════════════ -->
+  <div class="stats-bar" role="complementary" aria-label="Chiffres clés">
+    <div class="container">
+      <div class="stat-item">
+        <div class="stat-icon" aria-hidden="true">
+          <!-- Heroicons: map-pin -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <span class="stat-num">84</span>
+        <span class="stat-label">Vaucluse</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon" aria-hidden="true">
+          <!-- Heroicons: check-circle -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <span class="stat-num">0&nbsp;&euro;</span>
+        <span class="stat-label">Diagnostic gratuit</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon" aria-hidden="true">
+          <!-- Heroicons: users -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <span class="stat-num">4</span>
+        <span class="stat-label">Axes d&rsquo;intervention</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon" aria-hidden="true">
+          <!-- Heroicons: building-library -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
+          </svg>
+        </div>
+        <span class="stat-num">Loi&nbsp;1901</span>
+        <span class="stat-label">Statut associatif</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       NOTRE MISSION
+  ══════════════════════════════════════════════════ -->
+  <section id="mission">
+    <div class="container">
+      <div class="mission-layout">
+
+        <!-- Piliers -->
+        <div>
+          <div class="section-header">
+            <div class="section-eyebrow">Notre engagement</div>
+            <h2 class="section-title">Une mission d&rsquo;intérêt&nbsp;général pour les&nbsp;habitants</h2>
+            <p class="section-intro">
+              Fondée dans le Vaucluse, l&rsquo;ADLCNDH agit en association indépendante au service des habitants, des communes et des propriétaires confrontés aux problématiques de nuisibles.
+            </p>
+          </div>
+
+          <div class="mission-pillars">
+
+            <div class="mission-pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <!-- Heroicons: megaphone -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+                </svg>
+              </div>
+              <div class="pillar-body">
+                <h3>Informer les habitants</h3>
+                <p>Diffusion de guides pratiques, fiches conseils et informations préventives auprès de l&rsquo;ensemble des résidents du département.</p>
+              </div>
+            </div>
+
+            <div class="mission-pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <!-- Heroicons: magnifying-glass -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <div class="pillar-body">
+                <h3>Diagnostiquer les infestations</h3>
+                <p>Visite de diagnostic gratuite pour identifier la nature, l&rsquo;étendue et les risques liés à la présence de nuisibles dans votre habitation.</p>
+              </div>
+            </div>
+
+            <div class="mission-pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <!-- Heroicons: shield -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="pillar-body">
+                <h3>Prévenir les nuisibles</h3>
+                <p>Accompagnement préventif pour sécuriser les habitations et réduire durablement les facteurs favorisant les infestations.</p>
+              </div>
+            </div>
+
+            <div class="mission-pillar">
+              <div class="pillar-icon" aria-hidden="true">
+                <!-- Heroicons: home -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <div class="pillar-body">
+                <h3>Protéger les habitations</h3>
+                <p>Coordination avec les communes, bailleurs et propriétaires pour assurer la protection durable des biens et de leurs occupants.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Encadré institutionnel -->
+        <div>
+          <div class="mission-card">
+            <div class="rna-row">
+              <div class="rna-lbl">Numéro RNA</div>
+              <div class="rna-val">W842013315</div>
+            </div>
+            <div class="rna-row rouge">
+              <div class="rna-lbl">Statut juridique</div>
+              <div class="rna-val" style="font-size:15px;">Association loi du 1<sup>er</sup> juillet 1901</div>
+            </div>
+            <div class="rna-row">
+              <div class="rna-lbl">Zone d&rsquo;intervention</div>
+              <div class="rna-val" style="font-size:15px;">Département du Vaucluse (84)</div>
+            </div>
+
+            <div class="independance-note">
+              <!-- Heroicons: information-circle -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <span>
+                <strong>Association indépendante.</strong> L&rsquo;ADLCNDH est une association loi 1901 de droit privé. Elle n&rsquo;est affiliée à aucun service public, ni à l&rsquo;État, ni à aucune collectivité territoriale.
+              </span>
+            </div>
+
+            <div class="mission-tags">
+              <span class="tag">Rongeurs</span>
+              <span class="tag">Insectes nuisibles</span>
+              <span class="tag">Habitat</span>
+              <span class="tag">Prévention</span>
+              <span class="tag">Diagnostic</span>
+              <span class="tag">Sensibilisation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       SERVICES (CONSERVÉ — icônes SVG)
+  ══════════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header" style="text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <div class="section-eyebrow" style="justify-content:center;">Nos prestations</div>
+        <h2 class="section-title">Ce que nous proposons</h2>
+        <p class="section-intro" style="text-align:center;">
+          L&rsquo;ADLCNDH propose un ensemble de services gratuits ou à tarif associatif, accessibles à tout habitant du département du Vaucluse.
+        </p>
+      </div>
+      <div class="services-grid">
+
+        <article class="service-card">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <!-- Heroicons: magnifying-glass-circle -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h3>Diagnostic Gratuit</h3>
+          <p>Évaluation sur site de la présence et de la nature des nuisibles. Rapport d&rsquo;inspection remis au foyer à l&rsquo;issue de la visite.</p>
+          <span class="card-badge">Gratuit</span>
+        </article>
+
+        <article class="service-card">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <!-- Heroicons: building-office-2 -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v8h4"/><path d="M18 9h2a2 2 0 0 1 2 2v11h-4"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>
+            </svg>
+          </div>
+          <h3>Intervention Communale</h3>
+          <p>Coordination avec les mairies et bailleurs sociaux pour des interventions collectives sur les nuisibles affectant plusieurs habitations.</p>
+          <span class="card-badge">Sur demande</span>
+        </article>
+
+        <article class="service-card">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <!-- Heroicons: x-circle (nuisible barré) -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+            </svg>
+          </div>
+          <h3>Prévention Rongeurs</h3>
+          <p>Conseils pratiques et recommandations pour sécuriser durablement votre habitat contre la présence de rongeurs et autres nuisibles.</p>
+          <span class="card-badge">Préventif</span>
+        </article>
+
+        <article class="service-card">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <!-- Heroicons: academic-cap -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <h3>Sensibilisation</h3>
+          <p>Sessions d&rsquo;information pour les habitants, associations de quartier, syndicats de copropriété et collectivités locales du Vaucluse.</p>
+          <span class="card-badge">Collectif</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       DIAGNOSTIC — Formulaire (CONSERVÉ)
+  ══════════════════════════════════════════════════ -->
+  <section id="diagnostic">
+    <div class="container">
+      <div class="diagnostic-grid">
+
+        <!-- Étapes -->
+        <div>
+          <div class="section-header">
+            <div class="section-eyebrow">Procédure</div>
+            <h2 class="section-title">Demander un diagnostic en 4 étapes</h2>
+            <p class="section-intro">
+              La procédure de diagnostic est simple, rapide et entièrement gratuite pour tout habitant du département du Vaucluse.
+            </p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num" aria-hidden="true">1</div>
+              <div class="step-content">
+                <h4>Prise de contact</h4>
+                <p>Appelez-nous au 06&nbsp;95&nbsp;73&nbsp;17&nbsp;78 ou remplissez le formulaire ci-contre pour nous décrire votre situation.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num" aria-hidden="true">2</div>
+              <div class="step-content">
+                <h4>Prise de rendez-vous</h4>
+                <p>Un bénévole de l&rsquo;association vous recontacte dans les 48&nbsp;h pour fixer une date de visite à votre convenance.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num" aria-hidden="true">3</div>
+              <div class="step-content">
+                <h4>Visite sur site</h4>
+                <p>Un membre de l&rsquo;ADLCNDH se déplace à votre domicile pour évaluer la situation et identifier les nuisibles présents.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num" aria-hidden="true">4</div>
+              <div class="step-content">
+                <h4>Rapport et recommandations</h4>
+                <p>Un rapport de visite vous est remis avec les recommandations adaptées et les orientations vers les professionnels si nécessaire.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div>
+          <div class="form-wrap" role="form" aria-label="Formulaire de demande de diagnostic">
+            <h3>Demande de diagnostic</h3>
+            <p class="form-subtitle">Remplissez ce formulaire &mdash; nous vous rappelons sous 48&nbsp;h</p>
+            <div class="form-group">
+              <label for="f-nom">Nom et Prénom *</label>
+              <input id="f-nom" type="text" placeholder="Ex. : Marie Dupont" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="f-tel">Téléphone *</label>
+              <input id="f-tel" type="tel" placeholder="06 00 00 00 00" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="f-adresse">Adresse du logement *</label>
+              <input id="f-adresse" type="text" placeholder="Numéro, rue, commune (84)" autocomplete="street-address" />
+            </div>
+            <div class="form-group">
+              <label for="f-type">Type de nuisible observé</label>
+              <select id="f-type">
+                <option value="">— Sélectionner —</option>
+                <option>Rongeurs (rats, souris&hellip;)</option>
+                <option>Insectes rampants (blattes, fourmis&hellip;)</option>
+                <option>Insectes volants (frelons, guêpes&hellip;)</option>
+                <option>Insectes xylophages (termites, capricornes&hellip;)</option>
+                <option>Oiseaux nuisibles</option>
+                <option>Autre / Non identifié</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-desc">Description de la situation</label>
+              <textarea id="f-desc" placeholder="Décrivez brièvement ce que vous avez observé&hellip;"></textarea>
+            </div>
+            <button class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:15px;" onclick="handleFormDemo(event)">
+              <!-- Heroicons: paper-airplane -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Envoyer ma demande
+            </button>
+            <p class="form-demo-note">
+              <!-- Heroicons: exclamation-triangle -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              Version démo &mdash; formulaire non fonctionnel
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       APPEL À L'ACTION (CONSERVÉ, sans emojis)
+  ══════════════════════════════════════════════════ -->
+  <div class="cta-section" role="complementary" aria-label="Appel à l'action">
+    <div class="container">
+      <h2>Vous suspectez la présence de nuisibles&nbsp;?</h2>
+      <p>Ne laissez pas la situation s&rsquo;aggraver. Contactez l&rsquo;ADLCNDH dès maintenant pour une évaluation gratuite et sans engagement.</p>
+      <a href="#diagnostic" class="btn-primary" style="font-size:15px;padding:15px 34px;">
+        <!-- Heroicons: calendar -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Demander un diagnostic gratuit
+      </a>
+      <div class="cta-contacts">
+        <a class="cta-contact-card" href="tel:0695731778" aria-label="Téléphoner au 06 95 73 17 78">
+          <!-- Heroicons: phone -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.61 4.48 2 2 0 0 1 3.58 2.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <div class="cta-card-label">Téléphone</div>
+            <div class="cta-card-value">06 95 73 17 78</div>
+          </div>
+        </a>
+        <a class="cta-contact-card" href="mailto:association.adlcndh@gmail.com" aria-label="Envoyer un email">
+          <!-- Heroicons: envelope -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <div>
+            <div class="cta-card-label">Email</div>
+            <div class="cta-card-value">association.adlcndh@gmail.com</div>
+          </div>
+        </a>
+        <div class="cta-contact-card" aria-label="Zone d'intervention">
+          <!-- Heroicons: map -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+            <line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+          </svg>
+          <div>
+            <div class="cta-card-label">Zone d&rsquo;intervention</div>
+            <div class="cta-card-value">Vaucluse (84)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       CONTACT + MENTIONS LÉGALES (CONSERVÉ, sans emojis)
+  ══════════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Coordonnées -->
+        <div>
+          <div class="section-header">
+            <div class="section-eyebrow">Nous contacter</div>
+            <h2 class="section-title">Coordonnées de l&rsquo;association</h2>
+            <p class="section-intro">L&rsquo;ADLCNDH est joignable par téléphone et par email. Nous répondons dans les meilleurs délais.</p>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.61 4.48 2 2 0 0 1 3.58 2.25h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div class="ci-meta">
+              <div class="ci-lbl">Téléphone</div>
+              <div class="ci-val"><a href="tel:0695731778">06 95 73 17 78</a></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="ci-meta">
+              <div class="ci-lbl">Adresse email</div>
+              <div class="ci-val"><a href="mailto:association.adlcndh@gmail.com">association.adlcndh@gmail.com</a></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="ci-meta">
+              <div class="ci-lbl">Zone d&rsquo;intervention</div>
+              <div class="ci-val">Département du Vaucluse (84)</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
+              </svg>
+            </div>
+            <div class="ci-meta">
+              <div class="ci-lbl">Statut juridique &bull; RNA</div>
+              <div class="ci-val">Association loi 1901 &bull; W842013315</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mentions légales -->
+        <div>
+          <div class="section-header">
+            <div class="section-eyebrow">Transparence</div>
+            <h2 class="section-title" style="font-size:clamp(20px,2vw,28px);">Mentions légales</h2>
+          </div>
+          <div class="mentions-box">
+            <h4>Dénomination sociale</h4>
+            <p><strong>Association Départementale de Lutte Contre les Nuisibles dans le Domaine de l&rsquo;Habitat</strong> (ADLCNDH)</p>
+            <hr/>
+            <h4>Statut juridique</h4>
+            <p>Association régie par la loi du 1<sup>er</sup> juillet 1901 relative au contrat d&rsquo;association. L&rsquo;ADLCNDH est une association de droit privé, <strong>indépendante de tout service public</strong>, de l&rsquo;État, des collectivités territoriales et de tout organisme gouvernemental.</p>
+            <hr/>
+            <h4>Numéro RNA</h4>
+            <p><strong>W842013315</strong></p>
+            <hr/>
+            <h4>Contact</h4>
+            <p>Téléphone&nbsp;: <strong>06 95 73 17 78</strong><br/>Email&nbsp;: <strong>association.adlcndh@gmail.com</strong></p>
+            <hr/>
+            <h4>Limitation de responsabilité</h4>
+            <p>Les diagnostics réalisés par l&rsquo;ADLCNDH sont informatifs et non contractuels. L&rsquo;association ne se substitue pas aux professionnels certifiés pour les traitements réglementés.</p>
+            <hr/>
+            <h4>Site web</h4>
+            <p>Ce site constitue un prototype à des fins de démonstration. Il ne constitue pas un engagement contractuel de l&rsquo;association.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a class="nav-logo" href="#accueil" aria-label="ADLCNDH – retour accueil">
+            <svg width="34" height="38" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 3 L41 3 L41 32 L22 47 L3 32 Z" fill="#2d6b3f" stroke="#a07c0a" stroke-width="1.8"/>
+              <path d="M12 23 L22 13 L32 23" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="15" y="22" width="14" height="12" fill="none" stroke="#fff" stroke-width="1.3"/>
+              <rect x="19" y="27" width="6" height="7" fill="none" stroke="#fff" stroke-width="1"/>
+              <circle cx="33" cy="15" r="5" fill="#b71c1c" opacity="0.9"/>
+              <line x1="30.5" y1="12.5" x2="35.5" y2="17.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="35.5" y1="12.5" x2="30.5" y2="17.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+              <text x="22" y="42" text-anchor="middle" font-size="7" font-family="serif" fill="#a07c0a" font-weight="bold">84</text>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-acronyme" style="font-size:17px;">ADLCNDH</span>
+              <span class="logo-dept">Département du Vaucluse</span>
+            </div>
+          </a>
+          <p>Association Départementale de Lutte Contre les Nuisibles dans le Domaine de l&rsquo;Habitat. Association loi 1901 indépendante &mdash; RNA W842013315.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#accueil">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Accueil
+            </a></li>
+            <li><a href="#mission">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Notre mission
+            </a></li>
+            <li><a href="#services">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Nos services
+            </a></li>
+            <li><a href="#diagnostic">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Diagnostic
+            </a></li>
+            <li><a href="#contact">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Contact
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Nous joindre</h5>
+          <ul>
+            <li><a href="tel:0695731778">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.61 4.48 2 2 0 0 1 3.58 2.25h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              06 95 73 17 78
+            </a></li>
+            <li><a href="mailto:association.adlcndh@gmail.com">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a></li>
+            <li><a href="#diagnostic">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Demander un RDV
+            </a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 ADLCNDH &bull; Association loi 1901 &bull; RNA W842013315</span>
+        <span class="demo-tag">VERSION D&Eacute;MO &mdash; NON CONTRACTUEL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════════════ -->
+  <script>
+    /* --- Navigation mobile --- */
+    function toggleNav() {
+      const links = document.getElementById('nav-links');
+      const btn   = document.getElementById('hamburger');
+      const open  = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    }
+
+    document.querySelectorAll('#nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('open');
+        document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* --- Fermer menu au clic extérieur --- */
+    document.addEventListener('click', (e) => {
+      const links = document.getElementById('nav-links');
+      const btn   = document.getElementById('hamburger');
+      if (!links.contains(e.target) && !btn.contains(e.target)) {
+        links.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    /* --- Formulaire démo --- */
+    function handleFormDemo(e) {
+      e.preventDefault();
+      const btn = e.currentTarget;
+      const orig = btn.innerHTML;
+      btn.textContent = 'Démo — formulaire non connecté';
+      btn.style.background = '#a07c0a';
+      setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 3000);
+    }
+
+    /* --- Highlight nav actif au scroll --- */
+    const navAs   = document.querySelectorAll('#nav-links a:not(.nav-cta)');
+    const targets = document.querySelectorAll('section[id]');
+
+    const ioOpts = { rootMargin: '-30% 0px -65% 0px', threshold: 0 };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        navAs.forEach(a => {
+          const active = a.getAttribute('href') === `#${en.target.id}`;
+          a.style.color      = active ? '#fff' : '';
+          a.style.background = active ? 'rgba(255,255,255,0.08)' : '';
+        });
+      });
+    }, ioOpts);
+    targets.forEach(t => io.observe(t));
+  </script>
+
+</body>
+</html>
